@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: playrepo
+spec:
+  containers:
+  - image: kosenkovps/play-repo:golang
+    name: playrepo
+    ports:
+    - containerPort: 8080
+      protocol: TCP 
