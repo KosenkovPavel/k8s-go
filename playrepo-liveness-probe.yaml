@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: playrepo-liveness
+spec:
+  containers:
+  - image: kosenkovps/play-repo:latest
+    name: playrepo
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+      initialDelaySeconds: 3
+      periodSeconds: 3
+      failureThreshold: 1 # по дефолту должен провалиться три раза тест
