@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: playrepo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: playrepo
+  template:
+    metadata:
+      labels:
+        app: playrepo
+    spec:
+      containers:
+      - name: playrepo
+        image: kosenkovps/play-repo:latest
